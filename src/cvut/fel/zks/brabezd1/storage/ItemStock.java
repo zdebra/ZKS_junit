@@ -14,18 +14,19 @@ public class ItemStock {
         this.refItem = refItem;
         count = 0;
     }
-    
+
     @Override
     public String toString() {
         return "STOCK OF ITEM:  "+refItem.toString()+"    PIECES IN STORAGE: "+count;
     }
     
-    void IncreaseItemCount(int x) {
+    void increaseItemCount(int x) {
         count += x;
     }
     
     void decreaseItemCount(int x) {
         count -= x;
+        count = count < 0 ? 0 : count;
     }
     
     int getCount() {
