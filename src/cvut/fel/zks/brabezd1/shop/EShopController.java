@@ -1,12 +1,14 @@
 package cvut.fel.zks.brabezd1.shop;
 
-import archive.PurchasesArchive;
+import cvut.fel.zks.brabezd1.archive.PurchasesArchive;
+import cvut.fel.zks.brabezd1.storage.NoItemInStorage;
+import cvut.fel.zks.brabezd1.storage.Storage;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
-import storage.*;
-import archive.*;
+
 
 
 public class EShopController {
