@@ -18,14 +18,14 @@ public class DiscountedItem extends Item {
     
     public DiscountedItem(int id, String name, float price, String category, int discount, Date discountFrom, Date discountTo) {
         super(id, name, price, category);
-        this.discount = discount > 100 ? 0 : discount;
+        this.discount = discount > 100 || discount < 0 ? 0 : discount;
         this.discountFrom = discountFrom;
         this.discountTo = discountTo;
     }
     
     public DiscountedItem(int id, String name, float price, String category, int discount, String discountFrom, String discountTo)  {
         super(id, name, price, category);
-        this.discount = discount;
+        this.discount = discount > 100 || discount < 0 ? 0 : discount;
         this.discountFrom = parseDate(discountFrom);
         this.discountTo = parseDate(discountTo);
     }
@@ -111,7 +111,7 @@ public class DiscountedItem extends Item {
     
     
     public float getDiscountedPrice() {
-        return super.getPrice()*(100 - discount);
+        return getOriginalPrice()*(100 - discount) / 100;
     }
     
     

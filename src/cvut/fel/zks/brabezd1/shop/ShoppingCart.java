@@ -42,11 +42,11 @@ public class ShoppingCart {
      */
     
     public void removeItem(int itemID) {
-        for (int i = items.size() - 1; i <= 0; i--) {
-            Item temp_item = (Item) items.get(i);
-            if (temp_item.getID() == itemID) {
+        for (int i = 0; i < items.size(); i++) {
+            int id = items.get(i).getID();
+            if(id == itemID) {
                 items.remove(i);
-                System.out.println("Item with ID " + temp_item.getID() + " removed from the shopping cart.");
+                System.out.println("Item with ID " + id + " removed from the shopping cart.");
             }
         }
     }
@@ -63,9 +63,8 @@ public class ShoppingCart {
      */
     public int getTotalPrice() {
         int total = 0;
-        for (int i = items.size() - 1; i <= 0; i--) {
-            Item temp_item = (Item) items.get(i);
-            total += temp_item.getPrice();
+        for (int i = 0; i < items.size(); i++) {
+            total += items.get(i).getPrice();
         }
         return total;
     }
