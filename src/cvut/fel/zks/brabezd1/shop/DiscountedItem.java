@@ -19,7 +19,7 @@ public class DiscountedItem extends Item {
     public DiscountedItem(int id, String name, float price, String category, int discount, Date discountFrom, Date discountTo) {
         super(id, name, price, category);
         this.discount = discount > 100 ? 0 : discount;
-        this.discountTo = discountFrom;
+        this.discountFrom = discountFrom;
         this.discountTo = discountTo;
     }
     
@@ -124,6 +124,6 @@ public class DiscountedItem extends Item {
     
     
     public DiscountedItem copy() {
-       return new DiscountedItem(getID(), getName(), getPrice(), getCategory(), discount, discountFrom, discountTo); 
+        return new DiscountedItem(getID(), getName(), getOriginalPrice(), getCategory(), discount, discountFrom, discountTo);
     }
 }
