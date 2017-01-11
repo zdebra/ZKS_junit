@@ -119,7 +119,7 @@ public class Storage {
         Collection<ItemStock> s = stock.values();
         float totalPrice = 0;
         for (ItemStock e : s) {
-            totalPrice += e.getItem().getPrice();
+            totalPrice += e.getItem().getPrice() * e.getCount();
         }
         return (int) totalPrice;
     }

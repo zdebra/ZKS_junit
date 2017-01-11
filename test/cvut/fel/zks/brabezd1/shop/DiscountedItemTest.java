@@ -17,7 +17,7 @@ class DiscountedItemTest {
     @Test
     void toStringTest() {
         DiscountedItem discountedItem = new DiscountedItem(1,"test",100,"XY",10,"12.12.2015", "24.12.2017");
-        assertEquals("Item   ID 1   NAME test   CATEGORY XY   ORIGINAL PRICE 100.0    DISCOUNTED PRICE 9000.0  DISCOUNT FROM Sat Dec 12 00:00:00 CET 2015    DISCOUNT TO Sun Dec 24 00:00:00 CET 2017", discountedItem.toString());
+        assertEquals("Item   ID 1   NAME test   CATEGORY XY   ORIGINAL PRICE 100.0    DISCOUNTED PRICE 90.0  DISCOUNT FROM Sat Dec 12 00:00:00 CET 2015    DISCOUNT TO Sun Dec 24 00:00:00 CET 2017", discountedItem.toString());
     }
 
     @Test
